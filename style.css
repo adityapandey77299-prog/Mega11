@@ -66,4 +66,31 @@ button {
 body {
   padding-bottom: 60px;
 }
+}.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to right, #ff6b00, #ff8c42);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-item {
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.nav-item.active {
+  opacity: 1;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.nav-item:hover {
+  opacity: 1;
 }

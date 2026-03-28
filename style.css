@@ -42,4 +42,28 @@ button {
   border: none;
   color: white;
   font-size: 14px;
+  .navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ff6b00;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+
+/* Body ke niche space dena zaroori hai */
+body {
+  padding-bottom: 60px;
+}
 }

@@ -1,25 +1,82 @@
 
-  
 <!DOCTYPE html>
 <html>
 <head>
   <title>Mega11 Fantasy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+    }
+
+    .header {
+      background: #22c55e;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .match {
+      background: #1e293b;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .teams {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .prize {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: #22c55e;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 
-<body style="margin:0; font-family:Arial; background:#0f172a; color:white; text-align:center;">
+<body>
 
-  <div style="padding:50px;">
-    <h1 style="font-size:40px;">🏏 Mega11 Fantasy</h1>
-    <p style="font-size:20px;">Play. Compete. Win Real Money 💰</p>
+  <div class="header">🏏 Mega11 Fantasy</div>
 
-    <button onclick="join()" style="padding:15px 30px; font-size:18px; background:#22c55e; border:none; color:white; border-radius:10px;">
-      Join Contest
-    </button>
+  <div class="match">
+    <div class="teams">RCB vs MI</div>
+    <div>Entry: ₹49</div>
+    <div class="prize">Win: ₹5000</div>
+    <button onclick="join()">Join Contest</button>
+  </div>
+
+  <div class="match">
+    <div class="teams">CSK vs KKR</div>
+    <div>Entry: ₹99</div>
+    <div class="prize">Win: ₹10000</div>
+    <button onclick="join()">Join Contest</button>
+  </div>
+
+  <div class="match">
+    <div class="teams">IND vs AUS</div>
+    <div>Entry: ₹199</div>
+    <div class="prize">Win: ₹25000</div>
+    <button onclick="join()">Join Contest</button>
   </div>
 
   <script>
     function join() {
-      alert("Welcome to Mega11 💰");
+      alert("Contest Joined 💰");
     }
   </script>
 

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fantasy Cricket App</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f0f0f0;
+  margin: 0;
+}
+
+header {
+  background: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.container {
+  padding: 10px;
+}
+
+.player {
+  background: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  background: lightgreen;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  margin-top: 10px;
+}
+
+.section {
+  background: white;
+  margin-top: 10px;
+  padding: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>🏏 Fantasy Cricket</h1>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Match: India vs Australia</h2>
+    <p>Select 11 Players</p>
+  </div>
+
+  <div id="players"></div>
+
+  <div class="section">
+    <h3>Your Team (<span id="count">0</span>/11)</h3>
+    <ul id="team"></ul>
+  </div>
+
+  <button onclick="joinContest()">Join Contest (₹10)</button>
+
+  <div class="section">
+    <h3>Leaderboard</h3>
+    <ul id="leaderboard"></ul>
+  </div>
+
+</div>
+
+<script>
+
+const players = [
+"Virat Kohli","Rohit Sharma","KL Rahul",
+"Hardik Pandya","Jadeja","Dhoni",
+"Bumrah","Shami","Gill",
+"Smith","Warner","Maxwell","Cummins"
+];
+
+let selected = [];
+let leaderboard = [];
+
+const playersDiv = document.getElementById("players");
+const teamUl = document.getElementById("team");
+const count = document.getElementById("count");
+const leaderboardUl = document.getElementById("leaderboard");
+
+// Load players
+players.forEach(name => {
+  let div = document.createElement("div");
+  div.className = "player";
+  div.innerText = name;
+
+  div.onclick = () => {
+    if (selected.includes(name)) {
+      selected = selected.filter(p => p !== name);
+      div.classList.remove("selected");
+    } else {
+      if (selected.length >= 11) {
+        alert("Max 11 players allowed");
+        return;
+      }
+      selected.push(name);
+      div.classList.add("selected");
+    }
+    updateTeam();
+  };
+
+  playersDiv.appendChild(div);
+});
+
+function updateTeam() {
+  teamUl.innerHTML = "";
+  selected.forEach(p => {
+    let li = document.createElement("li");
+    li.innerText = p;
+    teamUl.appendChild(li);
+  });
+  count.innerText = selected.length;
+}
+
+function joinContest() {
+  if (selected.length < 11) {
+    alert("Select 11 players first");
+    return;
+  }
+
+  let points = 0;
+
+  selected.forEach(() => {
+    points += Math.floor(Math.random() * 100);
+  });
+
+  leaderboard.push(points);
+
+  leaderboard.sort((a, b) => b - a);
+
+  updateLeaderboard();
+
+  alert("Contest Joined! Points: " + points);
+}
+
+function updateLeaderboard() {
+  leaderboardUl.innerHTML = "";
+
+  leaderboard.forEach((pts, i) => {
+    let li = document.createElement("li");
+    li.innerText = "Rank " + (i + 1) + " - " + pts + " pts";
+    leaderboardUl.appendChild(li);
+  });
+}
+
+</script>
+
+</body>
+</html>

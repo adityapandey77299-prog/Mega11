@@ -1,7 +1,59 @@
-<button onclick="join()">Join Contest</button>
 
-<script>
-  function join() {
-    window.location.href = "team.html";
-  }
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mega11 Fantasy</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #111827;
+      color: white;
+    }
+
+    .header {
+      background: #ff6b00;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .match {
+      background: white;
+      color: black;
+      margin: 15px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      background: #ff6b00;
+      border: none;
+      color: white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">🏏 Mega11 Fantasy</div>
+
+  <div class="match">
+    <h3>RCB vs MI</h3>
+    <p>Entry: ₹49 | Win: ₹5000</p>
+    <button onclick="join()">Join Contest</button>
+  </div>
+
+  <script>
+    function join() {
+      window.location.href = "team.html";
+    }
+  </script>
+
+</body>
+</html>
